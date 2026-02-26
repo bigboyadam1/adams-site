@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f7f7f7;
+  color: #1a1a1a;
+  min-height: 100dvh;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  gap: 4rem;
+}
+
+.content {
+  flex: 0 0 auto;
+  max-width: 460px;
+  margin-left: clamp(0rem, 6vw, 8rem);
+}
+
+h1 {
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  color: #999;
+  margin-bottom: 2.5rem;
+}
+
+.bio {
+  margin-bottom: 1.5rem;
+}
+
+.bio p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+.bio a {
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+
+.bio a:hover {
+  border-color: #1a1a1a;
+}
+
+/* --- Projects collapsible --- */
+.projects {
+  margin-bottom: 2.5rem;
+}
+
+.projects summary {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: #999;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s ease;
+}
+
+.projects summary::-webkit-details-marker {
+  display: none;
+}
+
+.projects summary::before {
+  content: '+';
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+}
+
+.projects[open] summary::before {
+  content: '\2212';
+}
+
+.projects summary:hover {
+  color: #1a1a1a;
+}
+
+.projects ul {
+  list-style: none;
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+}
+
+.projects li {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+}
+
+.projects li a {
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+
+.projects li a:hover {
+  border-color: #1a1a1a;
+}
+
+.project-desc {
+  color: #999;
+  font-size: 0.82rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #1a1a1a;
+}
+
+/* --- Map --- */
+.map-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+#map {
+  width: 100%;
+  max-width: 640px;
+}
+
+#map svg {
+  width: 100%;
+  height: auto;
+}
+
+.map-label {
+  font-size: 0.75rem;
+  color: #bbb;
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- Staggered reveal on load --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.content .reveal:nth-child(1) { animation-delay: 0s; }
+.content .reveal:nth-child(2) { animation-delay: 0.08s; }
+.content .reveal:nth-child(3) { animation-delay: 0.16s; }
+.content .reveal:nth-child(4) { animation-delay: 0.24s; }
+.content .reveal:nth-child(5) { animation-delay: 0.32s; }
+
+.map-container {
+  animation-delay: 0.36s;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::selection {
+  background: #1a1a1a;
+  color: #f7f7f7;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .content {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  #map {
+    max-width: 100%;
+  }
+}
