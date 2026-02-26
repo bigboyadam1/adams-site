@@ -3,7 +3,7 @@ const visited = new Set([
   'GB', 'IE', 'FR', 'ES', 'BE', 'PT', 'CY', 'IT', 'CH', 'AT',
   'HU', 'CZ', 'SK', 'HR', 'ME', 'AL', 'MK', 'GR', 'TR', 'PL',
   'DE', 'LT', 'LV', 'EE', 'FI', 'SE', 'DK', 'SI', 'IS', 'US',
-  'KG', 'CN', 'VN', 'TH', 'LK', 'BG', 'XK'
+  'KG', 'CN', 'VN', 'TH', 'LK', 'BG', 'XK', 'TN'
 ]);
 
 const MAP_URL = 'https://unpkg.com/world-atlas@2/countries-110m.json';
@@ -42,7 +42,7 @@ const PROJECTION_SCALE = 120;
     '276': 'DE', '440': 'LT', '428': 'LV', '233': 'EE', '246': 'FI',
     '752': 'SE', '208': 'DK', '705': 'SI', '352': 'IS', '840': 'US',
     '417': 'KG', '156': 'CN', '704': 'VN', '764': 'TH', '144': 'LK',
-    '100': 'BG', '-99': 'XK'  // Kosovo
+    '100': 'BG', '-99': 'XK', '788': 'TN'  // Kosovo, Tunisia
   };
 
   const container = document.getElementById('map');
